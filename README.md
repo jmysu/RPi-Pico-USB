@@ -2,7 +2,7 @@
 USB related projects w/ RPi-Pico  _(Work-in-Progress)_<br>
  
 <br>
-#### Project LCD Touch w/ SoftSPI
+Project LCD2.8"(ST7789) + Touch(XPT2046) w/ SoftSPI
 <img src="pic/picoLCDTouch.gif" width=320>  <br>
 
 
