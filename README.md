@@ -6,3 +6,4 @@ Project LCD2.8"(ST7789) + Touch(XPT2046) w/ SoftSPI
 <img src="pic/picoLCDTouch.gif" width=320>  <br>
 
 
+-[W3C WebUSB API]WebAPI (https://wicg.github.io/webusb/)
