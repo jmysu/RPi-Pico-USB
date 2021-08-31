@@ -6,4 +6,6 @@ Project LCD2.8"(ST7789) + Touch(XPT2046) w/ SoftSPI
 <img src="pic/picoLCDTouch.gif" width=320>  <br>
 
 
--[W3C WebUSB API]WebAPI (https://wicg.github.io/webusb/)
+## References <br>
+  -[RPi_Pico](https://www.raspberrypi.org/documentation/pico/getting-started/) Pico Getting Started!<br>
+  -[W3C WebUSB API]WebAPI(https://wicg.github.io/webusb/)
