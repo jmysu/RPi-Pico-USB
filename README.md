@@ -8,6 +8,6 @@ Project LCD2.8"(ST7789) + Touch(XPT2046) w/ SoftSPI
 
 ## References <br>
   -[RPi_Pico](https://www.raspberrypi.org/documentation/pico/getting-started/) Pico Getting Started!<br>
-  -[Adafruit tinyUSB Library](https://github.com/adafruit/Adafruit_TinyUSB_Arduino)Arduino tinyUSB library fork
+  -[Adafruit tinyUSB Library](https://github.com/adafruit/Adafruit_TinyUSB_Arduino)Arduino tinyUSB library fork.<br>
   -[W3C WebUSB API](https://wicg.github.io/webusb/) WebAPI<br>
   
