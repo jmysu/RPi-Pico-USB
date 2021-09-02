@@ -1,0 +1,98 @@
+/**
+ *
+ *  PIO SPI for XPT2046 touch controller
+ * 
+ */
+#include <Arduino.h>
+
+#include "boards/pico.h"
+#include "hardware/pio.h"
+
+extern "C" {
+#include "spi.pio.h"
+#include "pio_spi.h"
+}
+
+void flash_read(const pio_spi_inst_t *spi, uint32_t addr, uint8_t *buf, size_t len) {
+    uint8_t cmd[4] = {
+            FLASH_CMD_READ,
+            addr >> 16,
+            addr >> 8,
+            addr
+    };
+    gpio_put(spi->cs_pin, 0);
+    pio_spi_write8_blocking(spi, cmd, 4);
+    pio_spi_read8_blocking(spi, buf, len);
+    gpio_put(spi->cs_pin, 1);
+}
+
+
+void flash_write_enable(const pio_spi_inst_t *spi) {
+    uint8_t cmd = FLASH_CMD_WRITE_EN;
+    gpio_put(spi->cs_pin, 0);
+    pio_spi_write8_blocking(spi, &cmd, 1);
+    gpio_put(spi->cs_pin, 1);
+}
+
+/*
+#define LCD28_RST_PIN	15	
+#define LCD28_DC_PIN	 8
+#define LCD28_CS_PIN	 9
+#define LCD28_CLK_PIN	10
+#define LCD28_BKL_PIN	13
+#define LCD28_MOSI_PIN	11
+#define LCD28_MISO_PIN	12
+#define TP2046_CS_PIN	16
+#define TP2046_IRQ_PIN	17
+*/
+#define XPT2046_CS  16
+#define XPT2046_SCK 10
+#define XPT2046_SDI 12
+#define XPT2046_SDO 11
+#define XPT2046_IRQ 17
+
+
+PIO pio = pio0;
+uint sm = 0;
+
+void setup() {
+    //stdio_init_all();
+
+    // Open serial communications and wait for port to open:
+    Serial.begin(115200);
+    while (!Serial);
+    delay(500);
+    Serial.println("PIO-SPI test...");
+
+    //----------------------------------------------------------
+    pio_spi_inst_t spi = {
+            .pio = pio0,
+            .sm = 0,
+            .cs_pin = XPT2046_CS
+            };
+    //gpio_init(PICO_DEFAULT_SPI_CSN_PIN);
+    //gpio_put(PICO_DEFAULT_SPI_CSN_PIN, 1);
+    //gpio_set_dir(PICO_DEFAULT_SPI_CSN_PIN, GPIO_OUT);
+    digitalWrite(XPT2046_CS, HIGH);
+    pinMode(XPT2046_CS, OUTPUT);
+
+    uint offset = pio_add_program(spi.pio, &spi_cpha0_program);
+    Serial.print("Loaded pio0 at 0x");
+    Serial.println(offset);
+
+    pio_spi_init(spi.pio, spi.sm, offset,
+                 8,       // 8 bits per SPI frame
+                 31.25f,  // 1 MHz @ 125 clk_sys
+                 false,   // CPHA = 0
+                 false,   // CPOL = 0
+                 XPT2046_SCK,
+                 XPT2046_SDO,
+                 XPT2046_SDI
+                 );
+
+    Serial.print("----------\nDone.\n");
+}
+
+void loop() {
+    //delay(1000);
+}
