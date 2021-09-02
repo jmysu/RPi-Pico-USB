@@ -5,6 +5,9 @@ Arduino tinyUSB related projects w/ RPi-Pico  _(Work-in-Progress)_<br>
 Project LCD2.8"(ST7789) + Touch(XPT2046) w/ SoftSPI
 <img src="pic/picoLCDTouch.gif" width=320>  <br>
 
+Project LCD2.8"(ST7789) + Touch(XPT2046) w/ pioSPI
+<img src="pic/pioLCDTouch.gif" width=320>  <br>
+
 
 ## References <br>
   -[RPi_Pico](https://www.raspberrypi.org/documentation/pico/getting-started/) Pico Getting Started!<br>
