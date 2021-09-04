@@ -1,0 +1,19 @@
+{
+  "name": "XPT2046",
+  "keywords": "XPT2046, Touch, driver",
+  "description": "XPT2046 Touch SPI driver",
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/Links2004/XPT2046.git"
+  },
+  "exclude": "tests",
+  "frameworks": "arduino",
+  "platforms": "*",
+  "authors":
+  {
+    "name": "Markus Sattler",
+    "url": "https://github.com/Links2004",
+    "maintainer": true
+  }
+}
