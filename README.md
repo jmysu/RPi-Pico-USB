@@ -4,10 +4,10 @@ Arduino tinyUSB related projects w/ RPi-Pico  _(Work-in-Progress)_<br>
 <br>
 Project LCD2.8"(ST7789) + Touch(XPT2046) w/ Soft/Hard SPI<br>
 <p float="left">
----Soft GPIO SPI---<br> 
-<img src="pic/picoLCDTouch.gif" width=320>
----Hard SPI---<br>
-<img src="pic/picoLCDTouchSPI.gif" width=280>
+---Soft GPIO SPI--- 
+<aaa img src="pic/picoLCDTouch.gif" width=320>
+---Hard SPI---
+<bbb img src="pic/picoLCDTouchSPI.gif" width=280>
 </p>
 <br>
 <br>
