@@ -1,8 +1,8 @@
 # RPi-Pico-USB [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)<br>
 Arduino tinyUSB related projects w/ RPi-Pico  _(Work-in-Progress)_<br>
 
- - The soft version depends on Adafruit ST7789 && Bodmer/TFT_Touch<br>
- - The hard version depends on Adafruit ST7789 && Links2004/XPT2046<br>
+ - The soft version depends on Adafruit/ST7789 && Bodmer/TFT_Touch<br>
+ - The hard version depends on Adafruit/ST7789 && Links2004/XPT2046<br>
 
  
 <br>
@@ -16,7 +16,7 @@ Project LCD2.8"(ST7789) + Touch(XPT2046) w/ Soft/Hard SPI<br>
 <br>
 <br>
 
-Project LCD2.8"(ST7789) + Touch(XPT2046) w/ RP2040 pioSPI <br>
+Project LCD2.8"(ST7789) + Touch(XPT2046) w/ RP2040 pioSPI interlolation<br>
 <img src="pic/pioLCDtouch.gif" width=320>  <br>
 
 
