@@ -7,7 +7,9 @@ Project LCD2.8"(ST7789) + Touch(XPT2046) w/ Soft/Hard SPI<br>
 <img src="pic/picoLCDTouch.gif" width=320> <img src="pic/picoLCDTouchSPI.gif" width=280>
 </p>
 <br>
-Project LCD2.8"(ST7789) + Touch(XPT2046) w/ pioSPI <br>
+<br>
+
+Project LCD2.8"(ST7789) + Touch(XPT2046) w/ RP2040 pioSPI <br>
 <img src="pic/pioLCDtouch.gif" width=320>  <br>
 
 
