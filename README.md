@@ -16,7 +16,7 @@ Project LCD2.8"(ST7789) + Touch(XPT2046) w/ Soft/Hard SPI<br>
 <br>
 <br>
 
-Project LCD2.8"(ST7789) + Touch(XPT2046) w/ RP2040 pioSPI interlolation<br>
+Project LCD2.8"(ST7789) + Touch(XPT2046) w/ RP2040 pioSPI interpolation<br>
 <img src="pic/pioLCDtouch.gif" width=320>  <br>
 
 
