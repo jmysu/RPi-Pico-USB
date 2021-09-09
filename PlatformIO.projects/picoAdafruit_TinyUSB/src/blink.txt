@@ -1,0 +1,28 @@
+#include <Arduino.h>
+#include <Adafruit_TinyUSB.h>
+#define LED LED_BUILTIN
+
+void setup() {
+  Serial.begin(115200);
+  //while (! Serial) {};
+  Serial.println("Attempting to detect Tiny USB"); 
+  #ifdef USE_TINYUSB
+    Serial.println("Tiny USB detected");
+  #else
+    Serial.println("Tiny USB NOT detected");
+  #endif  
+  pinMode(LED_BUILTIN, OUTPUT);
+}
+
+void loop() {
+  if (Serial) {
+    Serial.print("Hello Blink @");
+    Serial.println(millis());
+    }
+
+  digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
+  delay(500);                       // wait for a second
+  digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
+  delay(500);                       // wait for a second
+
+}
