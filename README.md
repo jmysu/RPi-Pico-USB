@@ -29,5 +29,5 @@ Added HID circle mouse <br>
   -[Adafruit tinyUSB Library](https://github.com/adafruit/Adafruit_TinyUSB_Arduino) Arduino tinyUSB library fork.<br>
   -[W3C WebUSB API](https://wicg.github.io/webusb/) WebAPI<br>
   -[HTML5 online gamepad tester](https://gamepad-tester.com/) GamePad-tester.com <br>
-  -[HTML5 online gamepad tester](https://greggman.github.io/html5-gamepad-test/) Another GamePad-test <br>
+  -[HidPyToy](https://github.com/todbot/hidpytoy) A cross platform HID test tool<br>
   
