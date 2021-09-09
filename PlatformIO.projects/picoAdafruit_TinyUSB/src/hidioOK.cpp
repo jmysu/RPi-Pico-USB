@@ -37,6 +37,10 @@
 #include <Arduino.h>
 #include "Adafruit_TinyUSB.h"
 
+#include <Adafruit_NeoPixel.h>
+//pyBase AD2:pin28, 8 pixels
+Adafruit_NeoPixel pixels = Adafruit_NeoPixel(8, 28, NEO_GRB + NEO_KHZ800);
+
 // HID report descriptor using TinyUSB's template
 // Generic In Out with 64 bytes report (max)
 uint8_t const desc_hid_report[] =
@@ -45,6 +49,7 @@ uint8_t const desc_hid_report[] =
 };
 
 Adafruit_USBD_HID usb_hid;
+
 
 
 // Invoked when received GET_REPORT control request
@@ -60,6 +65,8 @@ uint16_t get_report_callback (uint8_t report_id, hid_report_type_t report_type, 
   return 0;
 }
 
+bool isGotReport;
+uint8_t red, green, blue;
 // Invoked when received SET_REPORT control request or
 // received data on OUT endpoint ( Report ID = 0, Type = 0 )
 void set_report_callback(uint8_t report_id, hid_report_type_t report_type, uint8_t const* buffer, uint16_t bufsize)
@@ -80,6 +87,12 @@ void set_report_callback(uint8_t report_id, hid_report_type_t report_type, uint8
     SerialTinyUSB.print(buf);
     }
   SerialTinyUSB.println();  
+
+  //change color from input [1][2][3] as RGB
+  red  = *(buffer+1);
+  green= *(buffer+2);
+  blue = *(buffer+3);
+  isGotReport = true;
 }
 
 // the setup function runs once when you press reset or power the board
@@ -109,6 +122,13 @@ void setup()
 
   SerialTinyUSB.println("Adafruit TinyUSB HID Generic In Out example");
   pinMode(25, OUTPUT);
+ 
+  
+  // This initializes the NeoPixel with RED
+  pixels.begin();
+  pixels.setBrightness(16);
+  pixels.fill(0xff0000);
+  pixels.show();
 }
 
 unsigned long lastMillis=0;
@@ -119,5 +139,10 @@ void loop()
     lastMillis = millis();
     digitalWrite(25, !digitalRead(25));
     }
-   
+  if(isGotReport) {
+      uint32_t color = (red << 16) | (green << 8) | blue;
+      pixels.fill(color);
+      pixels.show();
+      isGotReport = false;
+    } 
 }
