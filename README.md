@@ -21,8 +21,10 @@ Project LCD2.8"(ST7789) + Touch-IRQ w/ RP2040 pioSPI interpolation<br>
 <br>
 Added HID circle mouse <br>
 <img src="pic/CircleMouseHID.gif" width=320>  <br>
-
-
+<br>
+Working on color sense!<br>
+<img src="pic/ColorSensor0912.gif" width=320>  <br>
+<br>
 
 ## References <br>
   -[RPi_Pico](https://www.raspberrypi.org/documentation/pico/getting-started/) Pico Getting Started!<br>
