@@ -32,4 +32,5 @@ Working on color sense!<br>
   -[W3C WebUSB API](https://wicg.github.io/webusb/) WebAPI<br>
   -[HTML5 online gamepad tester](https://gamepad-tester.com/) GamePad-tester.com <br>
   -[HidPyToy](https://github.com/todbot/hidpytoy) A cross platform HID test tool<br>
+  -[AMS Color Sensor Documents](https://ams.com/zh/download-center) AMS Color Sensor Documents.
   
